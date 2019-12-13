@@ -1,5 +1,5 @@
 # java.deep.clone.collection
-Java deep clone collection is a maven project that let you clone whatever collection in java. This tool clones collections with serializable and non serializable classes. The non serializable clases have to implement cloneable.
+Java deep clone collection is a maven project that lets you clone whatever collection in java. This tool clones collections with serializable and non serializable classes. The non serializable clases have to implement cloneable.
 
 If you have a lot of serializable clases with a lot of collections, People usually use a serializedClone algorithm to clone their data but this method is extremly slow. For this rerason, I have implemented this tool.
 
