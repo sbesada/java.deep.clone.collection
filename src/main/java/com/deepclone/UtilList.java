@@ -7,6 +7,8 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
+import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -199,6 +201,42 @@ public class UtilList {
         }
 
         return result;
+    }
+
+    /**
+     * deepCloneVector
+     *
+     * @param originalVector
+     * @return
+     * @param <T>
+     */
+    public static <T> Vector<T> deepCloneVector(final Vector<T> originalVector) {
+        if (originalVector == null) {
+            return null;
+        }
+        Vector<T> clonedVector = new Vector<T>();
+        for (T item : originalVector) {
+            clonedVector.add(DeepClone.clone(item));
+        }
+        return clonedVector;
+    }
+
+    /**
+     * deepCloneStack
+     *
+     * @param originalStack
+     * @return
+     * @param <T>
+     */
+    public static <T> Stack<T> deepCloneStack(final Stack<T> originalStack) {
+        if (originalStack == null) {
+            return null;
+        }
+        Stack<T> clonedStack = new Stack<T>();
+        for (T item : originalStack) {
+            clonedStack.add(DeepClone.clone(item));
+        }
+        return clonedStack;
     }
 
     /***********************************************************************/

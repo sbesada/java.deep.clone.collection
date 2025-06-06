@@ -104,6 +104,14 @@ public class UtilCollection {
             result = UtilList.deepCloneCopyOnWriteArrayList((CopyOnWriteArrayList<T>) list);
             break;
 
+        case Vector:
+            result = UtilList.deepCloneVector((java.util.Vector<T>) list);
+            break;
+
+        case Stack:
+            result = UtilList.deepCloneStack((java.util.Stack<T>) list);
+            break;
+
         default:
             result = null;
         }
@@ -288,9 +296,12 @@ public class UtilCollection {
             result.setTypeClone(TypeClone.ArrayList);
         } else if (LinkedList.class.isAssignableFrom(clazz)) {
             result.setTypeClone(TypeClone.LinkedList);
+        } else if (java.util.Stack.class.isAssignableFrom(clazz)) {
+            result.setTypeClone(TypeClone.Stack);
         } else if (CopyOnWriteArrayList.class.isAssignableFrom(clazz)) {
             result.setTypeClone(TypeClone.CopyOnWriteArrayList);
-
+        } else if (java.util.Vector.class.isAssignableFrom(clazz)){
+            result.setTypeClone(TypeClone.Vector);
         } else {
             result.setTypeClone(TypeClone.NotCloneClass);
         }
